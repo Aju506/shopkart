@@ -1,0 +1,74 @@
+{% extends 'shop/layouts/main.html' %}
+{% block title %}
+Registration | shopkart
+{% endblock title %}
+
+{% block content %}
+<style>
+.pay{
+  background-color: blue;
+}
+</style>
+
+
+
+<section class="bg-light py-4 my-5" style="min-height:600px;">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h4 class="mb-3">Cart item</h4>
+        <hr style="border-color:#b8bfc2;">
+        <img src="{{products.product_image.url}}" height="300px" class="card-image-top" alt="{{products}}">
+      </div>
+
+     
+       <table class="">
+          <tr>
+              <th>image</th>
+              <th>product name</th>
+              <th>unit</th>
+              <th>quantity</th>
+              <th>amount</th>
+              <th>remove</th>
+          </tr>
+         {% for item in cart_items %}
+         <tr>
+          <td><img src="{{item.products.product_image.url}}" height="80px"  alt="{{item.products.name}}"></td>
+          <td>{{item.products.name}}</td>
+          <td>{{item.products.selling_price | stringformat:'d'}}</td>
+          <td>{{item.product_qty}}</td>
+          <td class="amt">{{item.total_cost | stringformat:'d'}}</td>
+          <td><a href="{% url 'shop:remove_cart'  item.id %}" onclick="return confirm('Are you sure? to Remove')" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i>Remove</a></td>
+         </tr>
+
+        {% endfor %}
+
+          <tr>
+            <td></td>
+            <td></td>
+            
+          <td colspan="2"><b>Total Amount</b></td>
+          <td id="net" >0</td>
+          <td class="pay"><a href="{% url 'shop:payment' %}">Pay Here</a></td>
+         </tr>
+
+       </table>
+
+      
+
+
+
+    </div>
+  </div>
+</section>
+<script>
+  const nodes = document.querySelectorAll('.amt');
+  const arr = Array.from(nodes);
+  const res = arr.reduce((acc, curr) => {
+   return acc += Number(curr.textContent)
+  }, 0);
+  document.getElementById("net").innerHTML="Rs : "+res;
+
+</script>
+
+{% endblock content %}
