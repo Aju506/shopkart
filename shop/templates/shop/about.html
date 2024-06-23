@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> About Us Page </title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body {
+  background-image: url('https://media.istockphoto.com/id/1414489347/photo/happy-little-girl-pointing-at-backpack-while-buying-school-supplies-with-her-parents-in.jpg?s=612x612&w=0&k=20&c=ccyEcquLeM7Vt-37qOH1Q-vPps8V_HygXEkYpO6hjhQ=');
+  background-repeat: no-repeat;
+  background-attachment: fixed;  
+  background-size: cover;
+}
+
+body {
+    background-color: black;
+}
+
+#aboutUs {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+#aboutUs img {
+    width: 400px;
+    margin: 20px;
+    border-radius: 10px;
+}
+
+.content {
+    margin: 20px 0;
+}
+
+.content h2 {
+    font-size: 50px;
+    color: #ffca70;
+}
+
+.content h4 {
+    font-size: 20px;
+    color: #fff;
+    margin: 10px 0;
+}
+
+.description {
+    color: #fff;
+    margin: 20px 0;
+    font-size: 18px;
+    line-height: 30px;
+    font-weight: 100;
+}
+
+.btn {
+    font-weight: bold;
+    border: 2px solid #ffca70;
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 20px;
+    transition: all 0.4s;
+    background-color: #ffca70;
+}
+
+.btn:hover {
+    border: 2px solid #ffca70;
+    background: transparent;
+    color: #ffca70;
+}
+
+@media screen and (max-width: 790px) {
+    #aboutUs img {
+        width: 80%;
+    }
+
+    #aboutUs {
+        grid-template-columns: 1fr;
+        place-items: center;
+    }
+}
+    </style>
+</head>
+<body>
+
+    <section id="aboutUs">
+        <img src="#" alt="computer user">
+        <div class="content">
+            <h2>About Us</h2>
+            <h4> Developer & Designer </h4>
+            <p class="description">
+                TECHNOLOGY AT FLIPKART
+INNOVATION
+Shopkart technology drives path-breaking, customer-focused innovation that makes high quality products accessible to Indian shoppers, besides making the online shopping experience convenient, intuitive and seamless.
+            </p>
+            <button class="btn">Read More</button>
+        </div>
+    </section>
+
+</body>
+</html>

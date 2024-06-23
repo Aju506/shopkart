@@ -23,5 +23,7 @@ urlpatterns=[
     path('collections/<str:cname>/<str:pname>',views.product_details,name='product_details'),
     path('addtocart/<int:product_id>',views.add_to_cart,name="addtocart"),
     path('payment',views.payment,name='payment'),
+    path('about',views.about,name='about'),
+    path('contact',views.contact,name='contact'),
     
 ]

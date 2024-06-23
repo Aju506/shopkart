@@ -75,8 +75,8 @@ WSGI_APPLICATION = 'shopfusion.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
-'''
-DATABASES = {
+
+'''DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'shopkart',
@@ -85,8 +85,8 @@ DATABASES = {
         'PORT':'5432',
         'HOST':'127.0.0.1'
     }
-}
-'''
+}'''
+
 import dj_database_url
 DATABASES={
     'default':dj_database_url.parse('postgres://shopkartdb_user:wQdcExC7muIwlrQ4Tr2W8brHrcGtPaW2@dpg-cpapegkf7o1s73ake6r0-a.oregon-postgres.render.com/shopkartdb')
